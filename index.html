@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="text">
+    <button></button>
+    <script>
+        const input = document.querySelector("input")
+        const btn = document.querySelector("button")
+
+        btn.addEventListener("click", () => {
+            number = parseInt(input.value)
+
+           
+            console.log(Math.floor(number))
+        })
+
+
+    </script>
 </body>
 </html>

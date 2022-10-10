@@ -7,8 +7,48 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text">
+    <button></button>
+    <p>
+
+    </p>
     <script>
-        
+        // substr
+
+        // substring
+
+        // slice
+
+        document.querySelector("button").addEventListener("click", () => {
+            const input = document.querySelector("input")
+            const inputValue = input.value
+
+
+            console.log(inputValue.toUpperCase())
+            
+            console.log(inputValue.charAt(3))
+
+
+
+            console.log(`dlugosc tekstu wynosi ${inputValue.length} `)
+            if(inputValue.startsWith("pies")){
+                console.log("pies")
+            }
+            let numerA = 0
+            for(let i = 0; i < inputValue.length; i++){
+                if(inputValue[i] === "a" || inputValue[i] === "A"){
+                    numerA++
+                    document.querySelector("p").textContent = `zawiera ${numerA} Aa`
+                }
+            }
+
+
+            const newText = inputValue.replaceAll("a", "e");
+
+            console.log(newText)
+
+
+        })
     </script>
 </body>
 </html>

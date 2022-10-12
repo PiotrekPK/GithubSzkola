@@ -7,15 +7,53 @@
     <title>Document</title>
 </head>
 <body>
+    <ul></ul>
     <script>
-        const array = ["a", "b", "c", "d"]
+        const auto = ["ałdi", "mercedęs", "wolswagen", "reno"]
 
         // pop
 
 
         // includes
-        console.log(array.includes("a"))
-        console.log(array)
+
+        // sort
+
+        // console.log(auto.includes("ałdi"))
+        // console.log(auto)
+
+        const ul = document.querySelector("ul")
+
+        // for(let i = 0; i < auto.length; i++){
+        //     const li = document.createElement("li")
+        //     ul.appendChild(li)
+        //     li.textContent = auto[i]        
+        // }
+    
+        auto.push("koko", "szanel", "na", "dobry", "dzien")
+
+
+            let num = 0
+        
+        auto.forEach(car => {
+            num++
+            const li = document.createElement("li")
+            ul.appendChild(li)
+            li.textContent = car  
+        })
+
+
+        const random = Math.floor(Math.random() * 10 + 5)
+       
+
+        const array2 = []
+
+        array2.push(random)
+
+        console.log(array2)
+
+        
+
+
     </script>
 </body>
 </html>

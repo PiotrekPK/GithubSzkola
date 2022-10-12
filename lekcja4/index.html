@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button ></button>
+    <p></p>
+    <script>
+
+        const btn = document.querySelector("button")
+        const array = []
+        let ilosc5 = 0
+        btn.addEventListener("click", () => {
+            const randomNumber = Math.floor(Math.random() * 6 + 1)
+            array.push(randomNumber)
+            if(randomNumber == 5){
+                ilosc5++
+                console.log(`ilosc 5 ${ilosc5}`)
+            }
+            let sum = 0
+            array.forEach(element => {
+                sum = element + sum
+                const srednia = sum / array.length
+                
+                document.querySelector("p").textContent = srednia.toFixed(2)
+            });
+            console.log(array)
+            array.splice(2)
+
+                // pop
+        })
+
+    </script>
+</body>
+</html>

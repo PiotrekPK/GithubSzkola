@@ -12,15 +12,21 @@
     align-items: center;
 }
 
-.window.--visible {
-    @include content();
+.window.--noVisible {
+    display: none;
 }
 
 .window {  
+    @include content();
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    text-align: center;
     &__exit {
         position: absolute;
         top: 5px;
         right: 2px;
+        border-radius: 50%;
     }
 
     &__yes {
@@ -28,6 +34,7 @@
         bottom: 10px;
         left: 30%;
         width: 50px;
+        background-color: #7CFC00;
     }
 
     &__no {
@@ -35,6 +42,11 @@
         bottom: 10px;
         left: 60%;
         width: 50px;
+        background-color: #DC143C;
     }
-    
+  
 }
+// @keyframes akcja {
+//     0% {}
+//     100% {top: 20; left: 300;}
+// }

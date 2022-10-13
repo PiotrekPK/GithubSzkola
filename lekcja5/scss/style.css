@@ -5,27 +5,37 @@
   align-items: center;
 }
 
-.window.--visible {
+.window.--noVisible {
+  display: none;
+}
+
+.window {
   width: 600px;
   height: 400px;
   position: relative;
   background-color: #ccc;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
-
 .window__exit {
   position: absolute;
   top: 5px;
   right: 2px;
+  border-radius: 50%;
 }
 .window__yes {
   position: absolute;
   bottom: 10px;
   left: 30%;
   width: 50px;
+  background-color: #7CFC00;
 }
 .window__no {
   position: absolute;
   bottom: 10px;
   left: 60%;
   width: 50px;
+  background-color: #DC143C;
 }/*# sourceMappingURL=style.css.map */

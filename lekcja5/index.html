@@ -8,15 +8,29 @@
     <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
-    <button class="add"></button>
-
-
     <div class="container">
-        <div class="window --visible ">
-            <button class="window__exit"></button>
-            <button class="window__yes"></button>
-            <button class="window__no"></button>
+        <div class="window">
+            <h2>Czy masz osiemnaście lat ?</h2>
+            <button class="window__exit">X</button>
+            <button class="window__yes">Yes</button>
+            <button class="window__no">No</button>
         </div>
     </div>
+    <script>
+        const btnExit = document.querySelector(".window__exit")
+
+
+        btnExit.addEventListener("click", () => {
+            document.querySelector(".window").style.animation = "akcja 1s "
+
+            setTimeout(
+                () => {
+                    document.querySelector(".window").classList.add("--noVisible")
+                }, 1000
+            )
+        
+        })
+
+    </script>
 </body>
 </html>

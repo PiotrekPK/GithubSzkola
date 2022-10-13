@@ -1,0 +1,40 @@
+@mixin content {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    background-color: #ccc;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.window.--visible {
+    @include content();
+}
+
+.window {  
+    &__exit {
+        position: absolute;
+        top: 5px;
+        right: 2px;
+    }
+
+    &__yes {
+        position: absolute;
+        bottom: 10px;
+        left: 30%;
+        width: 50px;
+    }
+
+    &__no {
+        position: absolute;
+        bottom: 10px;
+        left: 60%;
+        width: 50px;
+    }
+    
+}

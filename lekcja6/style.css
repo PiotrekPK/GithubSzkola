@@ -1,0 +1,42 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.baner {
+    background-color: #824555;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+ 
+
+.panele_gorne_1 , .panele_gorne_2 {
+    background-color: #a26475;
+    padding: 20px;
+    color: white;
+    /* width: 30%; */
+}
+
+
+.grid {
+   
+    /* height: 300px; */
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    grid-template-rows: 300px;
+    
+}
+
+button {
+    width: 100px;
+    height: 40px;
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.green {
+    background-color: green;
+}

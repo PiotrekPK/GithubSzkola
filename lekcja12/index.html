@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <select name="" class="waluty1">
+        <option value="PLN">PLN</option>
+        <option value="FUNT">FUNT</option>
+        <option value="EURO">EURO</option>
+    </select>
+    <select name="" class="waluty2">
+        <option value="PLN">PLN</option>
+        <option value="FUNT">FUNT</option>
+        <option value="EURO">EURO</option>
+    </select>
+    <button></button>
+    <script>
+        const input = document.querySelector("input")
+        const waluty1 = document.querySelector(".waluty1")
+        const waluty2 = document.querySelector(".waluty2")
+
+
+
+        
+        function currencyChanger() {
+            const firstSelect = waluty1.value;
+            const secoundSelect = waluty2.value
+         
+            if(firstSelect === "PLN" && secoundSelect === "FUNT"){
+                console.log(input.value * 2)
+            }else if(firstSelect === "PLN" && secoundSelect === "EURO"){
+                console.log(input.value * 4)
+            }else if(firstSelect === "EURO" && secoundSelect === "PLN"){
+                console.log(input.value * 3)
+            }else if(firstSelect === "EURO" && secoundSelect === "FUNT"){
+                console.log(input.value / 2)
+            }else if(firstSelect === "FUNT" && secoundSelect === "PLN"){
+                console.log(input.value / 4)
+            }else if(firstSelect === "FUNT" && secoundSelect === "EURO"){
+                console.log(input.value / 2)
+            }else {
+                console.log(input.value)
+            }
+        }
+
+
+        document.querySelector("button").addEventListener("click", currencyChanger)
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .beer_container {
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 200px;
+        height: 500px;
+        opacity: 0;
+        transition: 1s;
+        background-color: red;
+      }
+      .beer_container.left {
+        left: 100px;
+        opacity: 1;
+        transition: 1s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="beer_somersby beer">somer</button>
+    <button class="beer_lech beer">lech</button>
+    <button class="beer_desp beer">desp</button>
+
+    <div class="beer_container"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

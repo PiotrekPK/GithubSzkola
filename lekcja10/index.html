@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="normalne">
+    <input type="text" class="ulgowe">
+
+    <input name="koko" type="radio" class="miasto"><label for="">miasto</label>
+    <input name="koko" type="radio" class="wies"><label for="">wies</label>
+
+    <input type="checkbox" class="karta"><label for="">karta duzej rodziny</label>
+
+    <button class="zamow"></button>
+    
+</body>
+<script>
+    const inputNormalne = document.querySelector(".normalne")
+    const inputUlgowe = document.querySelector(".ulgowe")
+    const inputMiasto = document.querySelector(".miasto")
+    const inputWies = document.querySelector(".wies")
+    const inputKartaRodziny = document.querySelector(".karta")
+    
+
+    document.querySelector("button").addEventListener("click", ( ) => {
+       const inputNormalneValue = parseInt(inputNormalne.value)
+       const inputUlgoweValue = parseInt(inputUlgowe.value)
+        
+        sumMoneyMiasto(inputWies, inputKartaRodziny, inputNormalneValue)
+        sumMoneyWies(inputWies, inputKartaRodziny, inputUlgoweValue)
+    })  
+
+    function sumMoneyMiasto(inputRadio, inputCheckBox, inputValue) {
+        if(inputRadio.checked === true){
+            const wynik =  inputValue * 45
+            const percent = wynik * 0.05 
+            const sum = wynik - percent
+            console.log(sum)
+            if(inputCheckBox.checked === true){
+                const percent = sum * 0.03
+                console.log(sum - percent)
+            }    
+        }else {
+            console.log(inputValue * 45)
+        }
+    }
+
+    function sumMoneyWies(inputRadio, inputCheckBox, inputValue) {
+        if(inputRadio.checked === true){
+            const wynik =  inputValue * 28
+            const percent = wynik * 0.05 
+            const sum = wynik - percent
+            console.log(sum)
+            if(inputCheckBox.checked === true){
+                const percent = sum * 0.03
+                console.log(sum - percent)
+            }    
+        }else {
+            console.log(inputValue * 45)
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="haslo">
+    <button class="zapiszHaslo">zapisz haslo</button>
+    <input type="text" class="hasloWpisane">
+    <button class="hasloWpisaneBtn">log</button>
+    <p></p>
+
+    <script>
+        const hasloInput = document.querySelector(".haslo")
+        const btnHaslo = document.querySelector(".zapiszHaslo")
+        const hasloWpisane = document.querySelector(".hasloWpisane")
+        const hasloWpisaneBtn = document.querySelector(".hasloWpisaneBtn")
+
+        
+
+
+        btnHaslo.addEventListener("click", () => {
+            const haslo = hasloInput.value
+            localStorage.setItem("password", haslo)
+        })
+        hasloWpisaneBtn.addEventListener("click", () => {
+            const hasloLocal = localStorage.getItem("password")
+            const hasloValue = hasloWpisane.value
+            if(hasloValue === hasloLocal){
+                document.body.style.backgroundColor = "green"
+                document.querySelector("p").textContent = "dobre haslo "
+            }else {
+                document.body.style.backgroundColor = "red"
+                document.querySelector("p").textContent = "zle haslo"
+            }
+        })
+    </script>
+</body>
+</html>

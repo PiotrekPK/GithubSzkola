@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const arraMonth = ["styczen", "luty", "ma", "kiew", "maj" , "czer", "lip", "sier", "wrz", "paz", "lis", "gru"]
+        const arrayDay = ["pon" , "wtr", "srd", "czw", "pia", "sob", "niedz"]
+
+        const data = new Date()
+        console.log(data.getMonth())
+        console.log(data.getDay())
+        document.querySelector("div").textContent = `data miesiadz ${arraMonth[data.getMonth()]} rok ${data.getFullYear()} dzien: ${arrayDay[data.getUTCDay()- 1]}`
+       
+    </script>
+</body>
+
+</html>

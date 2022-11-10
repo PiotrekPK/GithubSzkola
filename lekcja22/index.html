@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="userName">
+    <input type="text" class="userEmail">
+    <button class="ustaw">ustaw</button>
+
+    <input type="text" class="nameWpisane">
+    <input type="text" class="emailWpisane">
+    <button class="spr">spr</button>
+   
+    <script>
+        const inputName = document.querySelector(".userName")
+        const inputEmail = document.querySelector(".userEmail")
+
+        const inputNameWpisane = document.querySelector(".nameWpisane")
+        const inputEmailWpisane  = document.querySelector(".emailWpisane")
+
+
+        class User {
+            constructor(name, email) {
+                this.name = name
+                this.email = email
+            }
+        }
+
+        function createUser() {
+            const user = new User(inputName.value, inputEmail.value)
+            userJson = JSON.stringify(user)
+            localStorage.setItem('user', userJson)
+        }
+
+
+
+        document.querySelector(".ustaw").addEventListener("click", createUser)
+
+
+        document.querySelector(".spr").addEventListener("click", () => {
+          
+            const passy = JSON.parse(localStorage.getItem('user'))
+            const {name , email} = passy
+          
+
+            if(inputNameWpisane.value === name && inputEmailWpisane.value === email){
+                console.log("dobre")
+            }else {
+                console.log("zle")
+            }
+        })
+
+
+    </script>
+</body>
+</html>

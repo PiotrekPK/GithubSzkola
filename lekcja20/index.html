@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function timer () {
+            const time = new Date()
+            let timeSecound = time.getSeconds()
+            let timeMinutes = time.getMinutes()
+            let timeHours = time.getHours()
+          
+            if(timeMinutes < 30 && timeSecound < 10){
+                document.body.textContent =  `mamy godzine ${timeHours}:0${timeMinutes}:0${timeSecound}`
+            }
+            else if(timeMinutes  < 30){
+                document.body.textContent =  `mamy godzine ${timeHours}:0${timeMinutes}:${timeSecound}`
+            }else if(timeSecound < 10) {
+                document.body.textContent =  `mamy godzine ${timeHours}:${timeMinutes}:0${timeSecound}`
+            }
+            else {
+                document.body.textContent =  `mamy godzine ${timeHours}:${timeMinutes}:${timeSecound}`
+            }
+
+           
+        }
+        setInterval(timer , 1000)
+    </script>
+</body>
+</html>

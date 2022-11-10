@@ -5,16 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            transition: 1s;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" class="userName">
-    <input type="text" class="userEmail">
-    <button class="ustaw">ustaw</button>
+    
+        <input type="password" class="userName" placeholder="haslo">
+        <input type="email" class="userEmail"  placeholder="email">
+        <button class="ustaw">ustaw</button>
+  
 
-    <input type="text" class="nameWpisane">
-    <input type="text" class="emailWpisane">
-    <button class="spr">spr</button>
+        <input type="password" class="nameWpisane"placeholder="haslo" >
+        <input type="email" class="emailWpisane" placeholder="email">
+        <button class="spr">spr</button>
+
    
+
+
+    
+
+
+
     <script>
         const inputName = document.querySelector(".userName")
         const inputEmail = document.querySelector(".userEmail")
@@ -40,17 +54,14 @@
 
         document.querySelector(".ustaw").addEventListener("click", createUser)
 
-
         document.querySelector(".spr").addEventListener("click", () => {
-          
             const passy = JSON.parse(localStorage.getItem('user'))
-            const {name , email} = passy
-          
-
+            const {name, email} = passy
             if(inputNameWpisane.value === name && inputEmailWpisane.value === email){
-                console.log("dobre")
+                document.body.style.backgroundColor = "green"
+            
             }else {
-                console.log("zle")
+                document.body.style.backgroundColor = "red"
             }
         })
 

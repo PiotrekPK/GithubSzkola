@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const h1 = document.querySelector("h1")
+
+        setInterval( () => {
+            const date = new Date()
+            const test = 14 
+            console.log(test)
+            if(date.getHours() <= 6){
+                h1.textContent = "jest rano"
+            }else if(date.getHours() < 13.59){
+                h1.textContent = "jest południe"
+            }else if(date.getHours() < 16.59){
+                h1.textContent = "jest wieczor"
+            }else {
+                h1.textContent = " noc"
+            }
+        }, 1000)
+
+        const array = [1, 2, 3, 1]
+
+        const set = new Set(array)
+
+        console.log(set)
+
+        const sum =  array.reduce((pov, num) => {num + pov}, 0)
+        console.log(sum)
+    </script>
+</body>
+</html>

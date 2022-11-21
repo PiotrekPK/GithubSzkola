@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ss {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .kk {
+            width: 200px;
+            height: 200px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+        }
+        .w {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .s{
+            position: absolute;
+            top: 0;
+            left: 100px;
+
+        }
+       
+    
+   
+    </style>
+</head>
+<body>
+    <button class="w"><=</button>
+   <div class="ss"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/1200px-Felis_catus-cat_on_snow.jpg" alt="" class="kk"> </div>
+    <div class="divJ"></div>
+    <button class="s">=></button>
+</body>
+<script>
+    const images = [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Felis_catus-cat_on_snow.jpg/1200px-Felis_catus-cat_on_snow.jpg',
+        "https://cdn.britannica.com/41/9641-004-A8DD825D/Yorkshire-boar.jpg",
+        "http://www.leclerc.rzeszow.pl/foto_shop/181/18454_kokos-1szt_210422040341.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Robert_Lewandowski_2018_%28cropped%29.jpg/162px-Robert_Lewandowski_2018_%28cropped%29.jpg",
+        "https://cdn.galleries.smcloud.net/t/galleries/gf-i2pp-MCuP-DQnD_czeslaw-michniewicz-664x442.JPG",
+        
+    ]
+    const btns = document.querySelectorAll("button")
+    const imgS = document.querySelector("img")
+
+    let num = 0
+
+    images.forEach(el => {
+        const img  = document.createElement("img")
+        document.body.appendChild(img)
+        img.src = el
+        document.querySelectorAll("img").forEach((el, i) =>  el.addEventListener("click" , function() {
+            imgS.src = this.src
+            num = i + -1
+        }))
+    })
+    btns.forEach(btn => btn.addEventListener("click", function() {  
+        if(this.textContent === "=>"){ 
+            num++
+            if(num > images.length -1){
+                num = 0
+            }
+            imgS.src = images[num] 
+        }else {
+            num--
+            if(num < 0){
+                num = images.length - 1
+            } 
+            imgS.src = images[num]
+        }   
+    }))
+    
+
+</script>
+</html>
